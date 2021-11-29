@@ -1,0 +1,9 @@
+body{
+    background-color:tomato;
+}
+
+h1{
+color: cornsilk;
+display: flex;
+justify-content: center;
+}
