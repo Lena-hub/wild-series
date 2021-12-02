@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Category #{{ categoryName }}{% endblock %}
+
+{% block body %}
+
+<div id="WS2">
+    <span id="W2">Wild</span>
+    <span id="S2">Series</span>
+</div>
+
+<div class="Page">
+    <h1 id="CategoryName">{{categoryName }} 😱</h1>
+    {% for programs in program %}
+
+ <div>
+    <img id="IMGprog" src="{{programs.poster}}" alt="{{ programs.title }} poster">
+    <p id="">{{programs.id}}</p>
+ </div>
+
+
+        <div id="resume">
+         <p>{{ programs.summary }}</p>
+        </div>
+
+            <p class="ProgTitre">{{ programs.title }}</p>
+
+
+
+<div>
+    <a  href="{{ path("program_show", { id: programs.id }) }}"><button id="VoirFiche">Voir la fiche</button></a>
+</div>
+
+            {% else %}
+        Aucune série trouvée.
+
+            {% endfor %}
+        </div>
+    </div>
+
+    <a href="{{ path('category_index') }}"><button id="Retour">Retour à la liste des catégories</button></a>
+{% endblock %}

@@ -1,5 +1,27 @@
+{% extends 'base.html.twig' %}
 
-{% extends "base.html.twig" %}
-{% block stylesheets %} {% endblock %}
+{% block title %}Série #{{ program.id }}{% endblock %}
 
-{% block body %} <h1> 🚀 {{id}} </h1> {% endblock %}
+{% block body %}
+
+<div id="WS2">
+    <span id="W2">Wild</span>
+    <span id="S2">Series</span>
+</div>
+
+<div class="Page">
+
+    <img id="IMGprog" src="{{program.poster}}" alt="{{ program.title }} poster">
+
+    <div id="TitreCategorie">
+        <h1>{{ program.title }} </h1>
+        <p id="categorie"> -  {{ program.category.name }} - </p>
+    </div>
+
+    <div id="resume">
+         <p>{{ program.summary }}</p>
+    </div>
+
+</div>
+    <a href="{{ path('program_index') }}"><button id="Retour">Retour à l'acceuil</button></a>
+{% endblock %}

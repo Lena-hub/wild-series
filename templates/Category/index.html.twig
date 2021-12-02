@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}All programs{% endblock %}
+
+{% block body %}
+
+
+<div id="WS2">
+    <span id="W2">Wild</span>
+    <span id="S2">Series  </span>
+</div>
+
+  <h1>Toutes les séries par catégorie</h1>
+
+<div id="Caretories">
+    {% for category in categories %}
+
+<div>
+<a id="categoryName" href="{{ path("category_show", { categoryName: category.name  }) }}"> -{{ category.name }} - </a>
+</div>
+
+<a href="{{ path('program_index') }}"><button id="RetourC"> Retour à l'accueil</button></a>
+
+
+    {% else %}
+        Aucune série trouvée.
+    {% endfor %}
+</div>
+{% endblock %}
