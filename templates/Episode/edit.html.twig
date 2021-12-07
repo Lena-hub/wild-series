@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Episode{% endblock %}
+
+{% block body %}
+<a href="{{ path('program_index') }}">
+<div id="WS2" >
+      <span id="W2">Wild</span>
+      <span id="S2">Series</span>
+</div>
+</a>
+
+    <h1>Editer un épisode</h1>
+
+    {{ include('episode/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('episode_index') }}"><button id="Retour">Retour</button></a>
+
+    {{ include('episode/_delete_form.html.twig') }}
+{% endblock %}

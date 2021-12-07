@@ -1,3 +1,46 @@
+/* Les constantes */
+
+
+#Retour{
+    border: none;
+    border-radius: 10px;
+    background:none;
+    height: 50px;
+    width: 200px;
+    margin-top:auto;
+    margin-bottom:auto;
+    cursor: pointer;
+    font-size: 20px;
+    font-style: italic;
+    color:#59C0A5;
+    box-shadow: 0 5px 10px 0 #2C8970;
+    font-family: 'SPQR', sans-serif;
+
+}
+
+
+
+#Retour:hover{
+    color:#E5E5E5;
+    box-shadow: 0 5px 10px 0 #E5E5E5;
+}
+
+.save{border: none;
+    border-radius: 5px;
+    background:none;
+    cursor: pointer;
+    font-size: 15px;
+    font-style: italic;
+    color:#59C0A5;
+    box-shadow: 0 5px 10px 0 #2C8970;
+    font-family: 'SPQR', sans-serif;
+}
+
+.save:hover{
+    color:#E5E5E5;
+    box-shadow: 0 5px 10px 0 #E5E5E5;
+}
+
 body{
     background:#2C2928;
     color:#E5E5E5;
@@ -10,17 +53,14 @@ header{
     margin-right: 15px;
     margin-left: 10px;
     border-radius: 10px;
-
-
 }
+
 .Head{
     display: flex;
     justify-content: space-between;
     font-size: 20px;
     margin-left:auto;
     margin-right:auto;
-
-
 }
 
 #UL{
@@ -115,13 +155,6 @@ h2{
 
 }
 
-.button{
-
-margin-top: 400px;
-margin-left: -300px;
-
-}
-
 #VoirFiche{
 
     border-radius: 10px;
@@ -129,18 +162,12 @@ margin-left: -300px;
     background:none;
     height: 30px;
     width: 200px;
-    margin-top: 30px;
-    margin-left:90px;
     cursor: pointer;
     font-size: 18px;
     font-style: italic;
     color:#59C0A5;
     box-shadow: 0 5px 10px 0 #2C8970;
     font-family: 'SPQR', sans-serif;
-
-
-
-
 }
 
 #VoirFiche:hover{
@@ -163,30 +190,6 @@ margin-left: -300px;
 }
 
 
-#Retour{
-    border: none;
-    border-radius: 10px;
-    background:none;
-    height: 50px;
-    width: 200px;
-    margin-left: 500px;
-    margin-top:auto;
-    margin-bottom:auto;
-    cursor: pointer;
-    font-size: 20px;
-    font-style: italic;
-    color:#59C0A5;
-    box-shadow: 0 5px 10px 0 #2C8970;
-    font-family: 'SPQR', sans-serif;
-
-
-}
-
-#Retour:hover{
-    color:#E5E5E5;
-    box-shadow: 0 5px 10px 0 #E5E5E5;
-}
-
 
 /* Page Index Category */
 
@@ -196,7 +199,7 @@ margin-left: -300px;
     font-size: 30px;
     margin-left: 10px;
     margin-top: 20px;
-    margin-right: 400px;
+    margin-right: auto;
     font-family: 'DottyShadow', sans-serif;
 }
 
@@ -222,24 +225,7 @@ h1{
     font-size: 20px;
     display:block;
     font-family: 'SPQR Italic', sans-serif;
-}
 
-
-#RetourC{
-    border:none;
-    border-radius: 10px;
-    background:none;
-    height: 50px;
-    width: 200px;
-    margin-top:200px;
-    cursor: pointer;
-    font-size: 20px;
-    font-style: italic;
-    color:#59C0A5;
-    box-shadow: 0 5px 10px 0 #2C8970;
-    font-family: 'SPQR', sans-serif;
-    margin-left: 500px;
-    margin-left: 500px;
 }
 
 
@@ -273,6 +259,7 @@ p{
 
 a{
     color: #E5E5E5;
+
 }
 
 .episodes{
@@ -282,3 +269,20 @@ a{
 .saisonNom{
     font-size: 30px;
 }
+
+/* Page Program/new*/
+
+.formulaires{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+
+.save{
+    display: flex;
+    justify-content: center;
+    width: 200px;
+
+}
+
+/* Page season/

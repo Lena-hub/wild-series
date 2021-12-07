@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Episode{% endblock %}
+
+{% block body %}
+<a href="{{ path('program_index') }}">
+<div id="WS2" >
+      <span id="W2">Wild</span>
+      <span id="S2">Series</span>
+</div>
+</a>
+
+    <h1>Create new Episode</h1>
+
+    <div class="formulaires">{{ include('episode/_form.html.twig') }}</div>
+
+    <a href="{{ path('season_index') }}"><button id="Retour">Retour</button></a>
+{% endblock %}

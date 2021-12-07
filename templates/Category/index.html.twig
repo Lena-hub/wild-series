@@ -4,7 +4,6 @@
 
 {% block body %}
 
-
 <a href="{{ path('program_index') }}">
 <div id="WS2" >
       <span id="W2">Wild</span>
@@ -20,11 +19,10 @@
 
 <a id="categoryName" href="{{ path("category_show", { categoryName: category.name  }) }}"> {{ category.name }}</a>
 
-
     {% else %}
         Aucune série trouvée.
     {% endfor %}
 
-<a href="{{ path('program_index') }}"><button id="RetourC"> Accueil</button></a>
+<a href="{{ path('program_index') }}"><button id="Retour"> Accueil</button></a>
 </div>
 {% endblock %}

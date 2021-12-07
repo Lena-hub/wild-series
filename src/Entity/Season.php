@@ -7,9 +7,12 @@ use Doctrine\ORM\Mapping as ORM;
 use App\Repository\SeasonRepository;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\Common\Collections\ArrayCollection;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * @ORM\Entity(repositoryClass=SeasonRepository::class)
+ *  @UniqueEntity("title")
  */
 class Season
 {
@@ -23,17 +26,21 @@ class Season
 
     /**
      * @ORM\Column(type="integer")
+     * @Assert\NotBlank(message="Saisir un nombre")
      */
     private $number;
 
     /**
      * @ORM\Column(type="integer")
+     * @Assert\NotBlank(message="Saisir une année")
      */
     private $year;
 
     /**
      * @ORM\Column(type="text")
+     * @Assert\NotBlank(message="Saisir une description")
      */
+
     private $description;
 
     /**

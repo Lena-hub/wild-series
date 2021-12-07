@@ -1,8 +1,23 @@
 {% extends "base.html.twig" %}
 
 {% block body %}
+
+<a href="{{ path('program_index') }}">
+<div id="WS2" >
+      <span id="W2">Wild</span>
+      <span id="S2">Series</span>
+</div>
+</a>
+
+   <h1>Ajouter une nouvelle série</h1>
+
+     <div class="formulaires">
     {{ form_start(form) }}
     {{ form_widget(form) }}
-    <button type="submit">Ajouter une série</button>
+    </div>
+
+    <button class="save" type="submit">Ajouter une série</button>
     {{ form_end(form) }}
+
+
 {% endblock %}
