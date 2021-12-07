@@ -4,24 +4,41 @@
 
 {% block body %}
 
-<div id="WS2">
-    <span id="W2">Wild</span>
-    <span id="S2">Series</span>
+<a href="{{ path('program_index') }}">
+<div id="WS2" >
+      <span id="W2">Wild</span>
+      <span id="S2">Series</span>
 </div>
+</a>
 
-<div class="Page">
-
-    <img id="IMGprog" src="{{program.poster}}" alt="{{ program.title }} poster">
-
-    <div id="TitreCategorie">
-        <h1>{{ program.title }} </h1>
-        <p id="categorie"> -  {{ program.category.name }} - </p>
+<div class="contenuSerie">
+    <div>
+       <img id="IMGprog" src="{{program.poster}}" alt="{{ program.title }} poster">
     </div>
+
+   <div id="TitreCategorie">
+        <h1>{{ program.title }} </h1>
+        <h2 id="categorie"> -  {{ program.category.name }} - </h2>
+    </div>
+
 
     <div id="resume">
-         <p>{{ program.summary }}</p>
+        <p>{{ program.summary }}</p>
     </div>
-
 </div>
-    <a href="{{ path('program_index') }}"><button id="Retour">Retour à l'acceuil</button></a>
+
+<div class="seasons">
+    <p> Les saisons :</p>
+        {% for season in program.seasons %}
+        <li>
+        <a href="{{ path("program_show_season", { program_id: program.id, season_id:season.number}) }}">
+        {{season.description}}
+        </a>
+        </li>
+        {% endfor %}
+</div>
+
+    <a href="{{ path('program_index') }}"><button id="Retour">Acceuil</button></a>
+
 {% endblock %}
+

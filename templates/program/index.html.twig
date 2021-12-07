@@ -1,34 +1,38 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}All programs{% endblock %}
+
+
+{% block title %}Toutes les séries{% endblock %}
 
 {% block body %}
+
 <header>
    <div class="Head">
-        <a  href=""><button id="UL">John Doe</button></a>
+        <a  href=""><button id="UL">CONNEXION</button></a>
         <a  href="{{ path('category_index') }}"><button id="UL">Catégories</button></a>
         <a  href=""><button id="UL">Acteurs</button></a>
     </div>
-
-
 </header>
 
-<div id="WS">
-    <span id="W">Wild</span>
-    <span id="S">Series</span>
+<a href="{{ path('program_index') }}">
+<div id="WS" >
+      <span id="W">Wild</span>
+      <span id="S">Series</span>
 </div>
+</a>
 
 <div id="Programs">
     {% for program in programs %}
 
     <div id="TitreIMG">
        <a  href="{{ path("program_show", { id: program.id }) }}"><img id="IMG" src="{{program.poster}}" alt=""></a>
-    <h2>{{ program.title }}</h2>
+    <h2>{{ program.title }} </h2>
     </div>
 
     <div class="button">
         <a  href="{{ path("program_show", { id: program.id }) }}"><button id="VoirFiche">Voir la fiche</button></a>
     </div>
+
     {% else %}
         Aucune série trouvée.
     {% endfor %}

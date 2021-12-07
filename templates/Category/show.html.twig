@@ -4,29 +4,30 @@
 
 {% block body %}
 
-<div id="WS2">
-    <span id="W2">Wild</span>
-    <span id="S2">Series</span>
+<a href="{{ path('program_index') }}">
+<div id="WS2" >
+      <span id="W2">Wild</span>
+      <span id="S2">Series</span>
 </div>
+</a>
 
-<div class="Page">
-    <h1 id="CategoryName">{{categoryName }} 😱</h1>
-    {% for programs in program %}
 
- <div>
+    <h1 id="CategoryName">{{categoryName }}</h1>
+       {% for program in programs %}
+        <p class="ProgTitre">{{ programs.title }}</p>
+
+<div class="contenuSerie">
+
+
     <img id="IMGprog" src="{{programs.poster}}" alt="{{ programs.title }} poster">
-    <p id="">{{programs.id}}</p>
- </div>
 
 
-        <div id="resume">
-         <p>{{ programs.summary }}</p>
-        </div>
-
-            <p class="ProgTitre">{{ programs.title }}</p>
+    <div id="resume">
+       <p>{{ programs.summary }}</p>
+    </div>
 
 
-
+</div>
 <div>
     <a  href="{{ path("program_show", { id: programs.id }) }}"><button id="VoirFiche">Voir la fiche</button></a>
 </div>
@@ -38,5 +39,5 @@
         </div>
     </div>
 
-    <a href="{{ path('category_index') }}"><button id="Retour">Retour à la liste des catégories</button></a>
+    <a href="{{ path('category_index') }}"><button id="Retour">Retour</button></a>
 {% endblock %}

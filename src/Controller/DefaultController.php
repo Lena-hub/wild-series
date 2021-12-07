@@ -1,23 +1,23 @@
 <?php
-// src/Controller/ProgramController.php
+
 namespace App\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Entity\Category;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class DefaultController extends AbstractController
 {
     /**
-     * @Route("/index/", name="app_index")
-     */
-
-     /**
-     * @Route("/", name="app_index")
+     * @Route("/default/", name="app_index")
      */
     public function index(): Response
     {
-        return $this->render('program/index.html.twig');
-    }
+        $categories = $this->getDoctrine()
+            ->getRepository(Category::class)
+            ->findAll();
 
+        return $this->render('default/index.html.twig', ['categories' => $categories]);
+    }
 }

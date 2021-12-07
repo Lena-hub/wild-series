@@ -5,25 +5,26 @@
 {% block body %}
 
 
-<div id="WS2">
-    <span id="W2">Wild</span>
-    <span id="S2">Series  </span>
+<a href="{{ path('program_index') }}">
+<div id="WS2" >
+      <span id="W2">Wild</span>
+      <span id="S2">Series</span>
 </div>
+</a>
 
-  <h1>Toutes les séries par catégorie</h1>
+  <h1>Catégories</h1>
 
 <div id="Caretories">
     {% for category in categories %}
 
-<div>
-<a id="categoryName" href="{{ path("category_show", { categoryName: category.name  }) }}"> -{{ category.name }} - </a>
-</div>
 
-<a href="{{ path('program_index') }}"><button id="RetourC"> Retour à l'accueil</button></a>
+<a id="categoryName" href="{{ path("category_show", { categoryName: category.name  }) }}"> {{ category.name }}</a>
 
 
     {% else %}
         Aucune série trouvée.
     {% endfor %}
+
+<a href="{{ path('program_index') }}"><button id="RetourC"> Accueil</button></a>
 </div>
 {% endblock %}
