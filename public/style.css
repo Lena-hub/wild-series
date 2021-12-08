@@ -1,6 +1,5 @@
 /* Les constantes */
 
-
 #Retour{
     border: none;
     border-radius: 10px;
@@ -15,10 +14,7 @@
     color:#59C0A5;
     box-shadow: 0 5px 10px 0 #2C8970;
     font-family: 'SPQR', sans-serif;
-
 }
-
-
 
 #Retour:hover{
     color:#E5E5E5;
@@ -44,7 +40,6 @@
 body{
     background:#2C2928;
     color:#E5E5E5;
-
 }
 
 header{
@@ -75,16 +70,11 @@ header{
     color:#59C0A5;
     box-shadow: 0 5px 10px 0 #2C8970;
     font-family: 'SPQR', sans-serif;
-
-
-
-
 }
 
 #UL:hover{
     color:#E5E5E5;
     box-shadow: 0 5px 10px 0 #E5E5E5;
-
 }
 
 #WS{
@@ -95,10 +85,7 @@ header{
     margin-top: 20px;
     margin-right: 400px;
     font-family: 'DottyShadow', sans-serif;
-
-
 }
-
 
 #S{
     margin-top: 25px;
@@ -189,8 +176,6 @@ h2{
     border-radius: 10px;
 }
 
-
-
 /* Page Index Category */
 
 #WS2{
@@ -216,6 +201,8 @@ h1{
     font-size: 20px;
     font-style: italic;
     font-family: 'SPQR', sans-serif;
+
+
 }
 
 #categoryName{
@@ -226,6 +213,12 @@ h1{
     display:block;
     font-family: 'SPQR Italic', sans-serif;
 
+
+
+}
+
+#categoryName:hover{
+    color:#59C0A5;
 }
 
 
