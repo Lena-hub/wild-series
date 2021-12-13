@@ -3,12 +3,7 @@
 {% block title %}Episode index{% endblock %}
 
 {% block body %}
-<a href="{{ path('program_index') }}">
-<div id="WS2" >
-      <span id="W2">Wild</span>
-      <span id="S2">Series</span>
-</div>
-</a>
+
 
     <h1>Episode index</h1>
 
@@ -24,12 +19,13 @@
         <tbody>
         {% for episode in episodes %}
             <tr>
-                <td>{{ episode.id }}</td>
                 <td>{{ episode.title }}</td>
                 <td>{{ episode.number }}</td>
                 <td>
-                    <a href="{{ path('episode_show', {'id': episode.id}) }}"><button class="save">show</button></a>
-                  <a href="{{ path('episode_edit', {'id': episode.id}) }}"><button class="save">edit</button></a>
+                <br>
+                <a href="{{ path('episode_show', {'id': episode.id}) }}"><button class="save">show</button></a>
+                <a href="{{ path('episode_edit', {'id': episode.id}) }}"><button class="save">edit</button></a>
+                <br>
                 </td>
             </tr>
         {% else %}

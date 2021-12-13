@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Actor{% endblock %}
+
+{% block body %}
+
+    <h1>Actor</h1>
+
+    <table class="table">
+        <h1>{{ actor.name }}</h1>
+    </table>
+
+    <a href="{{ path('season_edit', {'id': actor.id}) }}"><button class="save">editer</button></a>
+
+
+    {{ include('actor/_delete_form.html.twig') }}
+
+<strong>Cet acteur à joué dans :</strong>
+<ul>
+    {% for program in actor.programs %}
+        <li>{{ program.title }} </li>
+    {% else %}
+        <li>Aucun acteur pour cette série</li>
+    {% endfor %}
+</ul>
+
+    <a href="{{ path('actor_index') }}"><button id="Retour">Retour</button></a>
+{% endblock %}

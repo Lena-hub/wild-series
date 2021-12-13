@@ -11,51 +11,53 @@
     cursor: pointer;
     font-size: 20px;
     font-style: italic;
-    color:#59C0A5;
-    box-shadow: 0 5px 10px 0 #2C8970;
+    color:#E5E5E5;
+    box-shadow: 0 5px 10px 0 #E5E5E5;
     font-family: 'SPQR', sans-serif;
 }
 
 #Retour:hover{
-    color:#E5E5E5;
-    box-shadow: 0 5px 10px 0 #E5E5E5;
+    color:#EA5353;
+    box-shadow: 0 5px 10px 0 #EA5353;
 }
 
-.save{border: none;
+.save{
+    border: none;
     border-radius: 5px;
     background:none;
     cursor: pointer;
     font-size: 15px;
     font-style: italic;
-    color:#59C0A5;
-    box-shadow: 0 5px 10px 0 #2C8970;
+    color:#E5E5E5;
+    box-shadow: 0 5px 10px 0 #E5E5E5;
     font-family: 'SPQR', sans-serif;
 }
 
 .save:hover{
-    color:#E5E5E5;
-    box-shadow: 0 5px 10px 0 #E5E5E5;
+    color:#EA5353;
+    box-shadow: 0 5px 10px 0 #EA5353;
 }
 
 body{
     background:#2C2928;
     color:#E5E5E5;
+
 }
 
 header{
-    border:#59C0A5;
+    border:#EA5353;
     margin-top: 20px;
-    margin-right: 15px;
-    margin-left: 10px;
     border-radius: 10px;
-}
-
-.Head{
+    width: 100%;
     display: flex;
     justify-content: space-between;
     font-size: 20px;
-    margin-left:auto;
-    margin-right:auto;
+
+}
+
+header a{
+
+    width: 32%
 }
 
 #UL{
@@ -63,33 +65,34 @@ header{
     border:none;
     background:none;
     height: 40px;
-    width: 400px;
+    width: 100%;
     cursor: pointer;
     font-size: 18px;
     font-style: italic;
-    color:#59C0A5;
-    box-shadow: 0 5px 10px 0 #2C8970;
-    font-family: 'SPQR', sans-serif;
+    color:#E5E5E5;
+    box-shadow: 0 5px 10px 0 #E5E5E5;
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
 #UL:hover{
-    color:#E5E5E5;
-    box-shadow: 0 5px 10px 0 #E5E5E5;
+    color:#EA5353;
+    box-shadow: 0 5px 10px 0 #EA5353;
 }
 
 #WS{
     display: flex;
-    color:#59C0A5;;
+    color:#EA5353;
     font-size: 70px;
     margin-left: 10px;
     margin-top: 20px;
     margin-right: 400px;
-    font-family: 'DottyShadow', sans-serif;
+    font-family: 'Anton', sans-serif;
+
 }
 
 #S{
     margin-top: 25px;
-    color:#59C0A5;
+    color:#EA5353;
 }
 
 a{
@@ -99,20 +102,23 @@ a{
 
 /* Page Index Program */
 
-
-#Programs{
+.content{
     display: flex;
-    justify-content: space-between;
+    flex-direction: row;
+    justify-content: center;
     gap:10px;
+    overflow-x: scroll;
+
 
 }
 
+
 #TitreIMG{
     display: flex;
-    flex-direction: column;
     margin-top: 30px;
-    margin-left: auto;
-    margin-right: auto;
+    flex-direction:column;
+    align-items: center;
+    scroll-behavior: smooth;
 
 }
 
@@ -120,6 +126,7 @@ a{
     height: 320px;
     width: 220px;
     border-radius: 10px;
+    object-fit: cover;
 
 }
 
@@ -135,10 +142,7 @@ h2{
 
     font-size: 15px;
     text-align: center;
-    font-family: 'SPQR', sans-serif;
-
-
-
+    font-family: 'Roboto Condensed', sans-serif;
 
 }
 
@@ -152,14 +156,14 @@ h2{
     cursor: pointer;
     font-size: 18px;
     font-style: italic;
-    color:#59C0A5;
-    box-shadow: 0 5px 10px 0 #2C8970;
-    font-family: 'SPQR', sans-serif;
+    color:#E5E5E5;
+    box-shadow: 0 5px 10px 0 #E5E5E5;
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
 #VoirFiche:hover{
-    color:#E5E5E5;
-    box-shadow: 0 5px 10px 0 #E5E5E5;
+    color:#EA5353;
+    box-shadow: 0 5px 10px 0 #EA5353;
 }
 
 
@@ -174,33 +178,21 @@ h2{
     width: 300px;
     margin-top:auto;
     border-radius: 10px;
+    object-fit: cover;
+
 }
 
 /* Page Index Category */
 
-#WS2{
-    display: flex;
-    color: #59C0A5;
-    font-size: 30px;
-    margin-left: 10px;
-    margin-top: 20px;
-    margin-right: auto;
-    font-family: 'DottyShadow', sans-serif;
-}
-
-#S2{
-    margin-top: 10px;
-}
-
 h1{
     text-align: center;
-    font-family: 'SPQR', sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
 #categorie{
     font-size: 20px;
     font-style: italic;
-    font-family: 'SPQR', sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;
 
 
 }
@@ -211,14 +203,14 @@ h1{
     font-size:20px;
     font-size: 20px;
     display:block;
-    font-family: 'SPQR Italic', sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;
 
 
 
 }
 
 #categoryName:hover{
-    color:#59C0A5;
+    color:#EA5353;
 }
 
 
@@ -274,7 +266,7 @@ a{
 .save{
     display: flex;
     justify-content: center;
-    width: 200px;
+    width: 80px;
 
 }
 

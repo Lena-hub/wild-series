@@ -38,6 +38,11 @@ class Episode
      */
     private $season;
 
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $summary;
+
 
     public function getId(): ?int
     {
@@ -78,6 +83,18 @@ class Episode
     public function setSeason(?Season $season): self
     {
         $this->season = $season;
+
+        return $this;
+    }
+
+    public function getSummary(): ?string
+    {
+        return $this->summary;
+    }
+
+    public function setSummary(string $summary): self
+    {
+        $this->summary = $summary;
 
         return $this;
     }

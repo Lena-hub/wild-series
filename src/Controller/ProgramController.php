@@ -6,6 +6,7 @@ use App\Entity\Season;
 use App\Entity\Episode;
 use App\Entity\Program;
 use App\Form\ProgramType;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -31,7 +32,7 @@ class ProgramController extends AbstractController
             ->findAll();
 
         return $this->render(
-            'program/index.html.twig', ["programs" => $programs]);
+            'Program/index.html.twig', ["programs" => $programs]);
     }
 
  /**
@@ -61,7 +62,7 @@ class ProgramController extends AbstractController
             return $this->redirectToRoute('program_index');
         }
         // Render the form
-        return $this->render('program/new.html.twig', ["form" => $form->createView()]);
+        return $this->render('Program/new.html.twig', ["form" => $form->createView()]);
     }
 
 
@@ -80,7 +81,7 @@ class ProgramController extends AbstractController
             );
         }
 
-        return $this->render('program/show.html.twig', ["program" => $program]);
+        return $this->render('Program/show.html.twig', ["program" => $program]);
     }
 
     /**
@@ -94,7 +95,7 @@ class ProgramController extends AbstractController
 
     public function showSeason(Program $program, Season $season): Response
     {
-        return $this->render('program/season.html.twig', ["season" => $season, "program" => $program]);
+        return $this->render('Program/season.html.twig', ["season" => $season, "program" => $program]);
     }
 
     /**
@@ -109,7 +110,38 @@ class ProgramController extends AbstractController
 
     public function showEpisode(Program $program, Season $season, Episode $episode): Response
     {
-        return $this->render('program/episode.html.twig', ["program" => $program, "season" => $season, "episode" => $episode]);
+        return $this->render('Program/episode.html.twig', ["program" => $program, "season" => $season, "episode" => $episode]);
+    }
+
+    #[Route('/{id}/edit', name: 'program_edit', methods: ['GET', 'POST'])]
+    public function edit(Request $request, Program $program, EntityManagerInterface $entityManager): Response
+    {
+        $form = $this->createForm(ProgramType::class, $program);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $entityManager->flush();
+
+            return $this->redirectToRoute('program_index', [], Response::HTTP_SEE_OTHER);
+        }
+
+        return $this->renderForm('Program/edit.html.twig', [
+            'program' => $program,
+            'form' => $form,
+        ]);
+    }
+
+    /**
+     *[Route('/{id}', name='program_delete', methods= ['POST'])]
+     */
+    public function delete(Request $request, Program $program, EntityManagerInterface $entityManager): Response
+    {
+        if ($this->isCsrfTokenValid('delete'.$program->getId(), $request->request->get('_token'))) {
+            $entityManager->remove($program);
+            $entityManager->flush();
+        }
+
+        return $this->redirectToRoute('program_index', [], Response::HTTP_SEE_OTHER);
     }
 
 }

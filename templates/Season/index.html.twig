@@ -3,12 +3,7 @@
 {% block title %}Season index{% endblock %}
 
 {% block body %}
-<a href="{{ path('program_index') }}">
-<div id="WS2" >
-      <span id="W2">Wild</span>
-      <span id="S2">Series</span>
-</div>
-</a>
+
 
     <h1>Season index</h1>
 
@@ -25,14 +20,14 @@
         <tbody>
         {% for season in seasons %}
             <tr>
-                <td>{{ season.id }}</td>
                 <td>{{ season.number }}</td>
                 <td>{{ season.year }}</td>
                 <td>{{ season.description }}</td>
                 <td>
+                <br>
                   <a href="{{ path('season_show', {'id': season.id}) }}"><button class="save">show</button></a>
                   <a href="{{ path('season_edit', {'id': season.id}) }}"><button class="save">edit</button></a>
-
+                <br>
                 </td>
             </tr>
         {% else %}

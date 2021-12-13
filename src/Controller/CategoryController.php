@@ -30,7 +30,7 @@ class CategoryController extends AbstractController
             ->findAll();
 
         return $this->render(
-            'category/index.html.twig', ["categories" => $categories]);
+            'Category/index.html.twig', ["categories" => $categories]);
     }
 
 
@@ -61,7 +61,7 @@ class CategoryController extends AbstractController
             return $this->redirectToRoute('category_index');
         }
         // Render the form
-        return $this->render('category/new.html.twig', ["form" => $form->createView()]);
+        return $this->render('Category/new.html.twig', ["form" => $form->createView()]);
     }
 
 
@@ -82,7 +82,7 @@ class CategoryController extends AbstractController
                 "La catégorie" . $categoryName . "n'éxiste pas");
         }
 
-        return $this->render('category/show.html.twig', ["category" => $category]);
+        return $this->render('Category/show.html.twig', ["category" => $category]);
     }
 
 }

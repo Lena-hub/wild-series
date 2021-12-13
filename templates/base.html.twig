@@ -9,8 +9,13 @@
         {% block stylesheets %}
             <link rel="stylesheet" href="/style.css">
             <link rel="icon" type="favicon/x-icon" href="/public/assets/images/icon.png">
-            <link href="http://fonts.cdnfonts.com/css/dottyshadow" rel="stylesheet">
-            <link href="http://fonts.cdnfonts.com/css/spqr" rel="stylesheet">
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
 
             {% endblock %}
 
@@ -19,6 +24,22 @@
         {% endblock %}
     </head>
     <body>
+    {% block header %}
+
+<header>
+        <a  href=""><button id="UL">CONNEXION</button></a>
+        <a  href="{{ path('category_index') }}"><button id="UL">Catégories</button></a>
+        <a  href="{{ path('program_index') }}"><button id="UL">Séries</button></a>
+
+</header>
+{% endblock %}
+    <a href="{{ path('program_index') }}">
+         <div id="WS" >
+            <span id="W">Wild</span>
+           <span id="S">Series</span>
+         </div>
+    </a>
+
         {% block body %}
 
         {% endblock %}
